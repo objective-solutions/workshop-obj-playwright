@@ -10,6 +10,7 @@ export default {
   outputDir: 'test-failures',
   use: {
     viewport: { width: 1368, height: 768 },
+    trace: 'retain-on-failure',
     baseURL: process.env.APP_URL,
     storageState: 'session.json',
     browserName: 'chromium'
