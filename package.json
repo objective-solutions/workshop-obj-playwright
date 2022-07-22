@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "test": "playwright test"
+  },
   "devDependencies": {
     "@faker-js/faker": "^7.3.0",
     "@playwright/test": "^1.23.4",
