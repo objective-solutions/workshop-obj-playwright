@@ -13,15 +13,21 @@ export class Home {
     this.modalCreateDiscussion = new ModalCreateDiscussion(page);
   }
 
-  get lastMessage() {
-    return ''
+  get roomTitle() {
+    return this.page.locator('//html//body//div[1]//div//div[3]//div[1]//main//header//div//div[2]//div[1]//div[2]')
   }
 
-  get lastMessageNotSequential() {
-    return ''
+  async openChat(name: string) {
+    await this.page.locator('[data-qa="sidebar-search"]').click();
+		await this.page.locator('[data-qa="sidebar-search-input"]').type(name);
+		await this.page.locator('[data-qa="sidebar-item-title"]', { hasText: name }).first().click();
   }
 
-  async sendMessage() {}
+  async createNew(optionText: string) {
+    await this.page.locator('[data-qa="sidebar-create"]').click();
+    await this.page.locator(`li.rcx-option >> text="${optionText}"`).click();
+  }
 
-  async openChat() {}
+  async sendMessage() {
+  }
 }
