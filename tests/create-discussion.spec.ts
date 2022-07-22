@@ -9,6 +9,4 @@ test.describe('Create a discussion', async () => {
   })
 
   test.fixme('expect create a discussion using sidenav menu', () => {})
-
-  test.fixme('expect create a discussion from a message in channel', () => {})
 })
