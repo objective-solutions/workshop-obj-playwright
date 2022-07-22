@@ -13,10 +13,6 @@ export class Home {
     this.modalCreateDiscussion = new ModalCreateDiscussion(page);
   }
 
-  get roomTitle() {
-    return this.page.locator('//html//body//div[1]//div//div[3]//div[1]//main//header//div//div[2]//div[1]//div[2]')
-  }
-
   async openChat(name: string) {
     await this.page.locator('[data-qa="sidebar-search"]').click();
 		await this.page.locator('[data-qa="sidebar-search-input"]').type(name);
