@@ -7,7 +7,7 @@ export default {
   workers: 1,
   testDir: 'tests',
   reporter: 'list',
-  outputDir: 'test-failures',
+  outputDir: 'tests-failures',
   use: {
     viewport: { width: 1368, height: 768 },
     trace: 'retain-on-failure',
