@@ -3,6 +3,7 @@ require('dotenv').config()
 import { PlaywrightTestConfig } from '@playwright/test';
 
 export default {
+  globalSetup: require.resolve('./tests/config/global-setup'),
   workers: 1,
   testDir: 'tests',
   reporter: 'list',
