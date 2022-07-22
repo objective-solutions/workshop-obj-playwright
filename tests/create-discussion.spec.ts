@@ -8,5 +8,5 @@ test.describe('Create a discussion', async () => {
     pageHome = new Home(page);
   })
 
-  test.fixme('expect create a discussion using sidenav menu', () => {})
+  test.fixme('expect create a discussion', () => {})
 })
