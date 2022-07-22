@@ -8,5 +8,7 @@ test.describe('Create a public Channel', async () => {
     pageHome = new Home(page);
   })
 
+  test.fixme('expect create a private channel', async () => {})
+  
   test.fixme('expect create a public channel', async () => {})
 })
