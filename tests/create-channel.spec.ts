@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 import { Home } from './page-objects';
 
-test.describe('Create a public Channel', async () => {
+test.describe('Create a Channel', async () => {
   let pageHome: Home;
 
   test.beforeEach(async ({ page }) => {
