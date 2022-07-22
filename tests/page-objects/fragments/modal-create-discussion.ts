@@ -19,10 +19,6 @@ export class ModalCreateDiscussion {
     return this.page.locator('');
   }
 
-  get buttonCancel() {
-    return this.page.locator('');
-  }
-  
   get buttonCreate() {
     return this.page.locator('');
   }
