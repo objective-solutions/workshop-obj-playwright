@@ -1,18 +1,29 @@
-require('dotenv').config()
+require("dotenv").config();
 
-import { PlaywrightTestConfig } from '@playwright/test';
+import { PlaywrightTestConfig, devices } from "@playwright/test";
 
 export default {
-  globalSetup: require.resolve('./tests/config/global-setup'),
+  globalSetup: require.resolve("./tests/config/global-setup"),
   workers: 1,
-  testDir: 'tests',
-  reporter: 'list',
-  outputDir: 'tests-failures',
+  testDir: "tests",
+  reporter: process.env.CI ? "github" : "list",
+  outputDir: "tests-failures",
+  retries: process.env.CI ? 2 : 0,
   use: {
-    viewport: { width: 1368, height: 768 },
-    trace: 'retain-on-failure',
+    trace: "retain-on-failure",
+    screenshot: process.env.CI ? "off" : "only-on-failure",
     baseURL: process.env.APP_URL,
-    storageState: 'session.json',
-    browserName: 'chromium'
-  }
-} as PlaywrightTestConfig
+    storageState: "session.json",
+    headless: false,
+  },
+  projects: [
+    {
+      name: "chromium",
+      use: devices["Desktop Chrome"],
+    },
+    {
+      name: "firefox",
+      use: devices["Desktop Firefox"],
+    },
+  ],
+} as PlaywrightTestConfig;
