@@ -26,8 +26,8 @@ test.describe("Create a discussion", async () => {
     await expect(page).toHaveURL(/\/channel\/[a-z0-9]{0,17}$/i);
   });
 
-  // test.skip("Example Test Fail", async ({ page }) => {
-  //   await page.goto("/");
-  //   await pageHome.modalCreateDiscussion.inputYourMessage.type("teste");
-  // });
+  test.skip("Example Test Fail", async ({ page }) => {
+    await page.goto("/");
+    await pageHome.modalCreateDiscussion.inputYourMessage.type("teste");
+  });
 });
