@@ -2,3 +2,4 @@ node_modules
 tests-failures
 .env
 session.json
+playwright-report
