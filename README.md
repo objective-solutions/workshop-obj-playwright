@@ -16,6 +16,14 @@ $ yarn
 $ yarn playwright install chromium
 ```
 
+### Running RocketChat
+```
+cd rocketchat
+docker-compose up
+```
+
+If running RocketChat locally, change .env APP_URL to localhost:3000
+
 ## Refereces
 - https://playwright.dev/docs
 - https://www.w3schools.com

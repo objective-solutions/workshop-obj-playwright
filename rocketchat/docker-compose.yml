@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  db:
+    image: mongo
+    volumes:
+      - ./data/runtime/db:/data/db
+      - ./data/dump:/dump
+
+  rocketchat:
+    image: rocketchat/rocket.chat:latest
+    environment:
+      - MONGO_URL=mongodb://db:27017/rocketchat
+      - ROOT_URL=http://localhost:3000
+      - Accounts_UseDNSDomainCheck=False
+      - TEST_MODE=true
+    links:
+      - db:db
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
